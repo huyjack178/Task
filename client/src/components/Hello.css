@@ -1,0 +1,7 @@
+.hello {
+  text-align: center;
+}
+
+.hello button {
+  min-width: 50px;
+}
