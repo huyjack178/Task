@@ -8,33 +8,20 @@ export interface Props {
   onDecrement?: () => void;
 }
 
-interface State {
-  currentEnthusiam: number;
-}
-
-class Hello extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { currentEnthusiam: props.enthusiasmLevel || 1 };
+function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+  if (enthusiasmLevel <= 0) {
+    throw new Error("You could be a little more enthusiastic. :D");
   }
 
-  public render() {
-    const { name, enthusiasmLevel = 1 } = this.props;
-
-    if (enthusiasmLevel <= 0) {
-      throw new Error("You could be a little more enthusiastic.");
-    }
-    return (
-      <div className="hello">
-        <div className="greeting">
-          Hello {name + this.state.currentEnthusiam}!
-        </div>
-
-        <button onClick={this.props.onDecrement}>-</button>
-        <button onClick={this.props.onIncrement}>+</button>
+  return (
+    <div className="hello">
+      <div className="greeting">Hello {name + enthusiasmLevel}</div>
+      <div>
+        <button onClick={onDecrement}>-</button>
+        <button onClick={onIncrement}>+</button>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Hello;
