@@ -1,21 +1,16 @@
-import Grid from "@material-ui/core/Grid";
-
 import * as React from "react";
 import "./App.css";
+import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 
 class App extends React.Component {
   public render() {
     return (
-      <Grid container={true} spacing={16}>
+      <div>
         <TopBar />
-        <Grid item={true} xs={2}>
-          SideBav
-        </Grid>
-        <Grid item={true} xs={10}>
-          Main
-        </Grid>
-      </Grid>
+        <SideBar />
+        <main>DashBoard</main>
+      </div>
     );
   }
 }

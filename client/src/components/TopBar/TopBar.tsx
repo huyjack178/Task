@@ -10,7 +10,7 @@ import "./styles.css";
 export default class TopBar extends React.Component<any, any> {
   public render() {
     return (
-      <AppBar position="static">
+      <AppBar position="absolute">
         <Toolbar>
           <IconButton color="inherit" aria-label="Menu" className="menu-btn">
             <MenuIcon />
@@ -24,4 +24,3 @@ export default class TopBar extends React.Component<any, any> {
     );
   }
 }
-  
